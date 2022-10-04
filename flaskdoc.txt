@@ -1,0 +1,9 @@
+Packages to install on Server --
+
+
+
+pip install mysql-connector
+
+
+
+---- Calendar //TDAH//. based on CRUD python with FLASK ((CRUD))
