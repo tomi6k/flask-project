@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -23,7 +23,8 @@ def add_contact():
         cur.execute('INSERT INTO tareas (nombre_tarea, desc_tarea, dia_tarea, estado_tarea) VALUES (%s, %s, %s, %s)',
         (nombre_tarea, desc_tarea, dia_tarea, estado_tarea))
         mysql.connection.commit()
-        return 'Recibido'
+        flash('Recibido correctamente')
+        return redirect(url_for('Index'))
 
 @app.route('/edit')
 def edit_contact():
